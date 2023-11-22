@@ -100,12 +100,11 @@ function logOffUser(): void
     if(isset($_SESSION['email_address'])){
         session_destroy();
         session_unset();
-    header("Location: payment_form.php?logout=success");
-    exit;
-    }else{
-        header("Location: payment_form.php");
+        setFlashMessage("Logout successful. You have been logged out.");
+        header("Location: sign-in.php?logout=success");
+        exit;
+    } else {
+        header("Location: sign_in.php");
         exit;
     }
-    //ob_flush();
-
 }

@@ -56,9 +56,9 @@ echo '<!DOCTYPE html>
         </div>
 
         <ul class=navbar_header>
-            <a href="http://localhost:8080/Assignment1/dashboard.php"><li>Home</li></a>
-            <a href="http://localhost:8080/Assignment1/about.php"><li>About</li></a>
-            <a href="http://localhost:8080/Assignment1/logout.php"><li>Log-Out</li></a>
+            <a href="http://localhost:8080/Assignment2/dashboard.php"><li>Home</li></a>
+            <a href="http://localhost:8080/Assignment2/about.php"><li>About</li></a>
+            <a href="http://localhost:8080/Assignment2/logout.php"><li>Log-Out</li></a>
         </ul>
     </div>
 </div>';

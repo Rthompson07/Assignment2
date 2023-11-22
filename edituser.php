@@ -5,12 +5,36 @@ include 'include/header.php';
 require_once 'lib/db_php.php';
 require_once 'lib/functions.php';
 
-//if (isset($_SESSION['flash_message'])) {
-//    echo '<div class="alert alert-success" role="alert">' . $_SESSION['flash_message'] . '</div>';
-//    unset($_SESSION['flash_message']);
-//}
+// Check if the form is submitted for editing
+if(isset($_POST['edit'])) {
+    // ... your existing edit code ...
+}
 
+// Check if the form is submitted for deletion
+if(isset($_POST['delete'])) {
+    $user_id = $_POST['id'];
 
+    // Handle user deletion
+    try {
+        $result = deleteUser($user_id);
+
+        if($result) {
+            setFlashMessage("User deleted successfully");
+            header('Location: dashboard.php');
+            exit();
+        } else {
+            setFlashMessage("Deletion failed. Please try again.");
+            header('Location: dashboard.php');
+            exit();
+        }
+    } catch (Exception $e) {
+        setFlashMessage($e->getMessage());
+        header('Location: dashboard.php');
+        exit();
+    }
+}
+?>
+<?php
 //if ($_SERVER["REQUEST_METHOD"] == "GET") {
 if(isset($_POST['edit'])) {
     echo ">>>>>>>>>>>>>>>>>>> in function  222";

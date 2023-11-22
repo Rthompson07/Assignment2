@@ -74,6 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
+
 <!--<!DOCTYPE html>-->
 <!--<html lang="en">-->
 <!--<head>-->
@@ -98,6 +99,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo '<div class="alert alert-danger" role="alert">' . getFlashMessage() . '</div>';
             removeFlashMessage(); //clear message
         }
+
+        if (isset($_SESSION['log-out'])) {
+        echo '<div class="alert alert-success" role="alert">Update successful!</div>';
+        unset($_SESSION['edit']); // Clear the success message
+        }
         ?>
         <form  method="POST" class="bg-light p-5 rounded">
             <div class="form-group">
@@ -113,6 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
     </div>
 </div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
 <!--</body>-->
