@@ -97,16 +97,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <option value="v">Villain</option>
                 </select>
             </div>
-            <div class="container">
-                <div class="form-group">
-                    <label for="user_type">Upload Profile Picture:</label>
-                    <form action="upload_pfp.php" method="post" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label for="uploadedImage">Select image to upload (JPEG, PNG, or GIF):</label>
-                            <input type="file" class="form-control-file" name="uploadedImage" id="uploadedImage" accept=".jpeg, .jpg, .png, .gif" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Upload Image</button>
-                    </form>
+
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Register</button>
