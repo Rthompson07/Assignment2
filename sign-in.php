@@ -45,11 +45,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email_address = sanitize($email_address);
 
         // TODO: Check user credentials against the database.
-        $conn = db_connect();
-        //$query = "SELECT * FROM user WHERE email = ?";
-        $query = pg_prepare($conn, "check_credential", "SELECT * FROM users WHERE email_address=$1");
-        $result = pg_execute($conn, 'check_credential', array($email_address));
-        $user = pg_fetch_assoc($result);
+        try {
+            $conn = db_connect();
+            //$query = "SELECT * FROM user WHERE email = ?";
+            $query = pg_prepare($conn, "check_credential", "SELECT * FROM users WHERE email_address=$1");
+            $result = pg_execute($conn, 'check_credential', array($email_address));
+            $user = pg_fetch_assoc($result);
+        } catch (Exception $e) {
+            echo "unable to connect to database";
+        }
+
 
 
         //$stmt = $conn->prepare($query);
