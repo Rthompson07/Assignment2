@@ -58,6 +58,7 @@ echo '<!DOCTYPE html>
         <ul class=navbar_header>
             <a href="http://localhost:8080/Assignment2/dashboard.php"><li>Home</li></a>
             <a href="http://localhost:8080/Assignment2/user_profile.php"><li>User Profile</li></a>
+            <a href="http://localhost:8080/Assignment2/sandbox.php"><li>Paypal Sandbox</li></a>
             <a href="http://localhost:8080/Assignment2/about.php"><li>About</li></a>
             <a href="http://localhost:8080/Assignment2/logout.php"><li>Log-Out</li></a>
         </ul>

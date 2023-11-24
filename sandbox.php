@@ -15,7 +15,7 @@ $totalAmount = $price + ($price * $hstRate);
 </head>
 <body>
 <h1>Way Of Wade South Beach 10's</h1>
-<img src="imagesowSouthBeach10.jpg" alt="shoe">
+<img src="images/wowSouthBeach10.jpg" alt="shoe">
 <p>&nbsp;&nbsp;&nbsp;$<?php echo number_format($price, 2); ?> CAN (including HST)</p>
 
 <!-- PayPal payment button form -->
