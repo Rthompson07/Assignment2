@@ -52,7 +52,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </head>
 <body>
 
-<div class="container mt-5"
+<div class="container mt-5">
 
 <div class="row">
     <div class="col-md-6 offset-md-3">
@@ -96,12 +96,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <option value="d">Discharged</option>
                     <option value="v">Villain</option>
                 </select>
+                <button type="submit" class="btn btn-primary">Register</button>
+                <a href="index.php" class="btn btn-secondary">Return to Index</a>
             </div>
 
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Register</button>
-            <a href="index.php" class="btn btn-secondary">Return to Index</a>
+
         </form>
     </div>
 </div>

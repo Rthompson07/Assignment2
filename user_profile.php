@@ -44,6 +44,13 @@ echo '<div class="alert alert-success" role="alert"> Welcome ' . $first_name . '
             border: 1px solid #ccc; /* Add a border to the box */
             overflow: hidden; /* Hide any overflowing content */
             display: inline-block; /* Display the box as an inline block */
+
+        }
+
+        .profile-picture {
+            width: 100%; /* Make the image fill the entire container */
+            height: auto; /* Maintain the image's aspect ratio */
+            display: block; /* Remove any extra spacing below the image */
         }
     </style>
 
