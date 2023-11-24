@@ -5,6 +5,12 @@
    text-decoration: none;
 }
 
+.profile-picture{
+    width: 50%;
+    height: 80px;
+    display: block;
+}
+
 .index_h1
 {
     margin: 10px;
