@@ -5,46 +5,147 @@ $price = 150.00;
 $hstRate = 0.13; // HST rate (13% in Ontario, for example)
 $totalAmount = $price + ($price * $hstRate);
 
+$price2 = 160.00;
+$hstRate2 = 0.13; // HST rate (13% in Ontario, for example)
+$totalAmount = $price2 + ($price2 * $hstRate2);
+
+$price3 = 240.00;
+$hstRate3 = 0.13; // HST rate (13% in Ontario, for example)
+$totalAmount = $price3 + ($price3 * $hstRate3);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Sneakerhead ICE 5</title>
+
+    <style>
+        body {
+            text-align: center; /* Center the content horizontally */
+        }
+
+        .product-container {
+            display: inline-block; /* Align the container to the center */
+            text-align: left; /* Align text within the container to the left */
+            margin-bottom: 20px; /* Add margin at the bottom to move the footer down */
+        }
+
+        .product-box {
+            display: inline-block;
+            max-width: 300px;
+            margin: 10px;
+            padding: 10px 10px;
+
+            border-radius: 5px;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .product-box h1 {
+            margin-bottom: 15px;
+        }
+
+        .product-content img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+
+        }
+
+        .product-content p {
+            margin-top: 50px;
+        }
+
+        .product-box img{
+            max-width: 100%; /* Set the maximum width to 100% of the container */
+            max-height: 200px; /* Set the maximum height to a specific value */
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Additional style for the footer */
+
+    </style>
 </head>
 <body>
-<h1>Way Of Wade South Beach 10's</h1>
-<img src="images/wowSouthBeach10.jpg" alt="shoe">
-<p>&nbsp;&nbsp;&nbsp;$<?php echo number_format($price, 2); ?> CAN (including HST)</p>
 
-<!-- PayPal payment button form -->
-<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
-    <!-- Identify your business so that you can collect the payments -->
-    <!-- TODO: Replace this email with your sandbox email -->
-    <input type="hidden" name="business" value="sb-qhwza28197595@business.example.com">
+<!-- First Form -->
 
-    <!-- Specify a Buy Now button -->
-    <input type="hidden" name="cmd" value="_xclick">
+<div class="product-box">
+    <h1>Way Of Wade South Beach 10's</h1>
+    <img src="images/wowSouthBeach10.jpg" alt="shoe">
+    <p>&nbsp;&nbsp;&nbsp;$<?php echo number_format($price, 2); ?> CAN (including HST)</p>
 
-    <!-- Specify details about the item that buyers will purchase -->
-    <!-- TODO: Replace these value -->
-    <input type="hidden" name="item_name" value="Product XYZ">
-    <input type="hidden" name="amount" value="<?php echo $totalAmount;?>">
-    <input type="hidden" name="currency_code" value="CAD">
+    <!-- PayPal payment button form -->
+    <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+        <!-- TODO: Replace this email with your sandbox email -->
+        <input type="hidden" name="business" value="sb-qhwza28197595@business.example.com">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="item_name" value="Product XYZ">
+        <input type="hidden" name="amount" value="<?php echo $totalAmount;?>">
+        <input type="hidden" name="currency_code" value="CAD">
+        <input type="hidden" name="return" value="<?php echo NGROK_URL;?>/Assignment2/success.php">
+        <input type="hidden" name="cancel_return" value="<?php echo NGROK_URL?>/Assignment2/cancel.php">
+        <input type="hidden" name="notify_url" value="<?php echo NGROK_URL?>/Assignment2/ipn_listener.php">
+        <input type="image" name="submit" border="0"
+               src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"
+               alt="PayPal - The safer, easier way to pay online">
+        <img alt="" border="0" width="1" height="1"
+             src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+    </form>
+</div>
+<div class="product-container">
+</div>
+<!-- Second Form -->
+<div class="product-box">
+    <h1>PUMA x LAMELO BALL MB.03</h1>
+    <img src="images/lemeloshoes.03.jpg"" alt="shoe">
+    <p>&nbsp;&nbsp;&nbsp;$<?php echo number_format($price2, 2); ?> CAN (including HST)</p>
 
-    <!-- Return and notification URLs -->
-    <input type="hidden" name="return" value="<?php echo NGROK_URL;?>/Assignment2/success.php">
-    <input type="hidden" name="cancel_return" value="<?php echo NGROK_URL?>/Assignment2/cancel.php">
-    <input type="hidden" name="notify_url" value="<?php echo NGROK_URL?>/Assignment2/ipn_listener.php">
+    <!-- PayPal payment button form -->
+    <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+        <!-- TODO: Replace this email with your sandbox email -->
+        <input type="hidden" name="business" value="sb-qhwza28197595@business.example.com">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="item_name" value="Product XYZ">
+        <input type="hidden" name="amount" value="<?php echo $totalAmount;?>">
+        <input type="hidden" name="currency_code" value="CAD">
+        <input type="hidden" name="return" value="<?php echo NGROK_URL;?>/Assignment2/success.php">
+        <input type="hidden" name="cancel_return" value="<?php echo NGROK_URL?>/Assignment2/cancel.php">
+        <input type="hidden" name="notify_url" value="<?php echo NGROK_URL?>/Assignment2/ipn_listener.php">
+        <input type="image" name="submit" border="0"
+               src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"
+               alt="PayPal - The safer, easier way to pay online">
+        <img alt="" border="0" width="1" height="1"
+             src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+    </form>
+</div>
 
-    <!-- Display the payment button -->
-    <input type="image" name="submit" border="0"
-           src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"
-           alt="PayPal - The safer, easier way to pay online">
-    <img alt="" border="0" width="1" height="1"
-         src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
-</form>
+
+<div class="product-box">
+    <h1>Lebron James Witness VII</h1>
+    <img src="images/nike_witness.jpg" alt="shoe">
+    <p>&nbsp;&nbsp;&nbsp;$<?php echo number_format($price3, 2); ?> CAN (including HST)</p>
+
+    <!-- PayPal payment button form -->
+    <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+        <!-- TODO: Replace this email with your sandbox email -->
+        <input type="hidden" name="business" value="sb-qhwza28197595@business.example.com">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="item_name" value="Lebron James Witness VII">
+        <input type="hidden" name="amount" value="<?php echo $totalAmount;?>">
+        <input type="hidden" name="currency_code" value="CAD">
+        <input type="hidden" name="return" value="<?php echo NGROK_URL;?>/Assignment2/success.php">
+        <input type="hidden" name="cancel_return" value="<?php echo NGROK_URL?>/Assignment2/cancel.php">
+        <input type="hidden" name="notify_url" value="<?php echo NGROK_URL?>/Assignment2/ipn_listener.php">
+        <input type="image" name="submit" border="0"
+               src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"
+               alt="PayPal - The safer, easier way to pay online">
+        <img alt="" border="0" width="1" height="1"
+             src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+    </form>
+</div>
+
+
 </body>
 </html>
 
