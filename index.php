@@ -22,6 +22,7 @@ if (isset($_SESSION['user_authenticated']) && $_SESSION['user_authenticated'] ==
 
 if(isset($_GET['logout']) && $_GET['logout'] === 'success' ){
     echo '<div class="alert alert-success" role="alert"> Logout successful!</div>';
+    logEvent();
 }
 
 ?>

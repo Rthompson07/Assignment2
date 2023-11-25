@@ -1,1 +1,12 @@
 [2023-11-25 19:32:52] Bruce has successfully signed in 
+[2023-11-25 19:52:46] Bruce has successfully signed in 
+[2023-11-25 19:55:05] Clark has successfully signed in 
+[2023-11-25 19:55:23] Update successful 
+[2023-11-25 19:55:43] Deletion successful 
+[2023-11-25 20:24:46] Clark has successfully signed in 
+[2023-11-25 20:26:26] Clark has successfully signed in 
+[2023-11-25 20:26:30] Logging out! 
+[2023-11-25 20:26:53] Bruce has successfully signed in 
+[2023-11-25 20:26:55] Logging out! 
+[2023-11-25 20:29:13] Diana has successfully signed in 
+[2023-11-25 20:29:24] Diana had successfully logged out! 
