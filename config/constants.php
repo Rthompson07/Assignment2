@@ -33,7 +33,7 @@ const DB_PASS = "password";
 const DB_NAME = "INFT2100-F2023";
 const DB_PORT = "5432";
 
-const NGROK_URL = "https://fe63-142-198-195-205.ngrok-free.app";
+const NGROK_URL = "https://2bd5-76-69-152-23.ngrok-free.app";
 
 const COOKIE_LIFESPAN = "2592000"; // 1 month: min:60 x sec:60 x day: 24 * day/month: 30
 

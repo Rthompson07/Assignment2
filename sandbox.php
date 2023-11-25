@@ -26,18 +26,16 @@ $totalAmount = $price3 + ($price3 * $hstRate3);
         .product-container {
             display: inline-block; /* Align the container to the center */
             text-align: left; /* Align text within the container to the left */
-            margin-bottom: 20px; /* Add margin at the bottom to move the footer down */
+            margin-bottom: 1px; /* Add margin at the bottom to move the footer down */
         }
 
         .product-box {
-            display: inline-block;
-            max-width: 300px;
-            margin: 10px;
-            padding: 10px 10px;
-
-            border-radius: 5px;
-            box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+            width: 450px;
+            margin-left: 700px;
+            padding: 20px;
+            border: 1px solid #ccc;
             text-align: center;
+            box-shadow: 2px 2px 6px  rgba(0,0,0,0.20);
         }
 
         .product-box h1 {
@@ -57,7 +55,7 @@ $totalAmount = $price3 + ($price3 * $hstRate3);
 
         .product-box img{
             max-width: 100%; /* Set the maximum width to 100% of the container */
-            max-height: 200px; /* Set the maximum height to a specific value */
+            max-height: 150px; /* Set the maximum height to a specific value */
             display: block;
             margin: 0 auto;
         }
@@ -69,8 +67,8 @@ $totalAmount = $price3 + ($price3 * $hstRate3);
 <body>
 
 <!-- First Form -->
-
-<div class="product-box">
+ <div class="product-container">
+    <div class="product-box">
     <h1>Way Of Wade South Beach 10's</h1>
     <img src="images/wowSouthBeach10.jpg" alt="shoe">
     <p>&nbsp;&nbsp;&nbsp;$<?php echo number_format($price, 2); ?> CAN (including HST)</p>
@@ -92,11 +90,11 @@ $totalAmount = $price3 + ($price3 * $hstRate3);
         <img alt="" border="0" width="1" height="1"
              src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
     </form>
-</div>
-<div class="product-container">
-</div>
-<!-- Second Form -->
-<div class="product-box">
+    </div>
+
+
+    <!-- Second Form -->
+    <div class="product-box">
     <h1>PUMA x LAMELO BALL MB.03</h1>
     <img src="images/lemeloshoes.03.jpg"" alt="shoe">
     <p>&nbsp;&nbsp;&nbsp;$<?php echo number_format($price2, 2); ?> CAN (including HST)</p>
@@ -118,10 +116,10 @@ $totalAmount = $price3 + ($price3 * $hstRate3);
         <img alt="" border="0" width="1" height="1"
              src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
     </form>
-</div>
+    </div>
 
 
-<div class="product-box">
+    <div class="product-box">
     <h1>Lebron James Witness VII</h1>
     <img src="images/nike_witness.jpg" alt="shoe">
     <p>&nbsp;&nbsp;&nbsp;$<?php echo number_format($price3, 2); ?> CAN (including HST)</p>
@@ -143,7 +141,7 @@ $totalAmount = $price3 + ($price3 * $hstRate3);
         <img alt="" border="0" width="1" height="1"
              src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
     </form>
-</div>
+ </div>
 
 
 </body>
