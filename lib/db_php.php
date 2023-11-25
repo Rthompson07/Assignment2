@@ -199,4 +199,19 @@ string $new_user_type) : bool {
     return true;
 }
 
+function deleteUser(string $user_id) : bool {
+
+    $connection = db_connect();
+
+    $query = "DELETE FROM users WHERE id = $1 ";
+
+    $result = pg_query_params($connection, $query, array($user_id));
+
+    if(!$result){
+        throw new Exception("Deletion Failed: " . pg_last_error());
+    }
+
+    return true;
+}
+
 

@@ -5,34 +5,6 @@ include 'include/header.php';
 require_once 'lib/db_php.php';
 require_once 'lib/functions.php';
 
-// Check if the form is submitted for editing
-if(isset($_POST['edit'])) {
-    // ... your existing edit code ...
-}
-
-// Check if the form is submitted for deletion
-if(isset($_POST['delete'])) {
-    $user_id = $_POST['id'];
-
-    // Handle user deletion
-    try {
-        $result = deleteUser($user_id);
-
-        if($result) {
-            setFlashMessage("User deleted successfully");
-            header('Location: dashboard.php');
-            exit();
-        } else {
-            setFlashMessage("Deletion failed. Please try again.");
-            header('Location: dashboard.php');
-            exit();
-        }
-    } catch (Exception $e) {
-        setFlashMessage($e->getMessage());
-        header('Location: dashboard.php');
-        exit();
-    }
-}
 ?>
 <?php
 //if ($_SERVER["REQUEST_METHOD"] == "GET") {
@@ -66,6 +38,30 @@ if(isset($_POST['edit'])) {
         setFlashMessage($e->getMessage());
     }
 }
+
+if (isset($_POST['delete'])) {
+    $user_id = $_POST['id'];
+
+    // Handle user deletion
+    try {
+        $result = deleteUser($user_id);
+
+        if ($result) {
+            setFlashMessage("Deletion successful");
+            header('Location: dashboard.php');
+            exit();
+        } else {
+            setFlashMessage("Deletion failed. Please try again.");
+            header('Location: dashboard.php');
+            exit();
+        }
+    } catch (Exception $e) {
+        setFlashMessage($e->getMessage());
+        header('Location: dashboard.php');
+        exit();
+    }
+}
+
 ?>
 <div class="container mt-5">
 <?php
@@ -110,8 +106,9 @@ if (isset($_GET['id']) && isset($_GET['email']) && isset($_GET['first_name']) &&
 
 
     echo '<button type="submit" name="edit" class="btn btn-primary">Edit</button>';
-   // echo '<a href="payment_form.php" class="btn btn-secondary">Return to Home Page</a>';
+    echo '<button type="submit" name="delete" class="btn btn-primary">Delete</button>';
     echo '</form>';
+
 } else {
     echo 'User information not provided.';
 }
@@ -120,3 +117,4 @@ if (isset($_GET['id']) && isset($_GET['email']) && isset($_GET['first_name']) &&
 
 ?>
 </div>
+

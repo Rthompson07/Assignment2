@@ -41,7 +41,7 @@ echo '<div class="alert alert-success" role="alert"> Welcome '. $_SESSION['first
     <h2>Section title</h2>
     <div class="table-responsive">
         <table class="table table-striped table-sm">
-            <thead>
+          <thead>
             <tr>
                 <th>ID</th>
                 <th>Email Address</th>
@@ -50,7 +50,7 @@ echo '<div class="alert alert-success" role="alert"> Welcome '. $_SESSION['first
                 <th>Phone Extension</th>
                 <th>User Type</th>
                 <th>Time Created</th>
-
+            </tr>
             <tbody>
             <?php
             foreach ($users as $user) {

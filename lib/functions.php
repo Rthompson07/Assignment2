@@ -107,4 +107,10 @@ function logOffUser(): void
         header("Location: sign_in.php");
         exit;
     }
+// lib/functions.php
+
+
+
+
+
 }
