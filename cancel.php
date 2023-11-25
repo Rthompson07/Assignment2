@@ -14,7 +14,7 @@ include 'include/header.php';
 <h1>Payment Cancelled</h1>
 <p>You have chosen to cancel your transaction</p>
 
-<form action="https://b398-142-113-132-202.ngrok-free.app/Assignment2/sandbox.php" method="get">
+<form action="<?php echo NGROK_URL;?>/Assignment2/sandbox.php" method="get">
     <button type="submit" class="btn btn-primary">Return to Home Page</button>
 
 

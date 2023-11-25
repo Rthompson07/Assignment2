@@ -30,13 +30,13 @@ $totalAmount = $price + ($price * $hstRate);
     <!-- Specify details about the item that buyers will purchase -->
     <!-- TODO: Replace these value -->
     <input type="hidden" name="item_name" value="Product XYZ">
-    <input type="hidden" name="amount" value="<?php echo $totalAmount; ?>">
+    <input type="hidden" name="amount" value="<?php echo $totalAmount;?>">
     <input type="hidden" name="currency_code" value="CAD">
 
     <!-- Return and notification URLs -->
-    <input type="hidden" name="return" value="https://b398-142-113-132-202.ngrok-free.app/week10/success.php">
-    <input type="hidden" name="cancel_return" value="https://b398-142-113-132-202.ngrok-free.app/week10/cancel.php">
-    <input type="hidden" name="notify_url" value="https://b398-142-113-132-202.ngrok-free.app/week10/ipn_listener.php">
+    <input type="hidden" name="return" value="<?php echo NGROK_URL;?>/Assignment2/success.php">
+    <input type="hidden" name="cancel_return" value="<?php echo NGROK_URL?>/Assignment2/cancel.php">
+    <input type="hidden" name="notify_url" value="<?php echo NGROK_URL?>/Assignment2/ipn_listener.php">
 
     <!-- Display the payment button -->
     <input type="image" name="submit" border="0"
