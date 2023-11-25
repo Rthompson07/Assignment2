@@ -7,11 +7,13 @@ require_once 'lib/functions.php';
 
 // Start the session if it hasn't been started already
 // session_start();
-echo "Logging out!";
+// echo "Logging out!";
 
 // Check for the logout parameter in the URL
 if (isset($_GET['logout']) && $_GET['logout'] === 'success') {
+    setFlashMessage("Logout successful");
     $logoutMessage = getFlashMessage();
+    logEvent();
 } else {
     $logoutMessage = "";
 }

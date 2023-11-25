@@ -20,6 +20,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(!filter_var($email_address, FILTER_VALIDATE_EMAIL)) {
         // store message in session
         setFlashMessage("Invalid email provided");
+
     }
     else {
         try {
@@ -33,6 +34,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 redirect("sign-in.php");
             }else{
                 setFlashMessage("Registration failed. Please try again.");
+                logEvent();
             }
         }catch (Exception $e){
             setFlashMessage($e->getMessage());

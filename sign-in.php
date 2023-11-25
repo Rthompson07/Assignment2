@@ -69,11 +69,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['first_name'] = $user['first_name'];
             $_SESSION['last_name'] = $user['last_name'];
             header('Location: dashboard.php');
+            setFlashMessage("{$user['first_name']} has successfully signed in");
+            logEvent();
             ob_flush();
             exit();
         } else {
             // TODO: If not, show an error message.
             setFlashMessage("Invalid credentials. Please try again.");
+            logEvent();
         }
     }
 }

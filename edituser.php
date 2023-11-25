@@ -26,12 +26,14 @@ if(isset($_POST['edit'])) {
 
         if($result){
             setFlashMessage("Update successful");
+            logEvent();
             header('Location: dashboard.php');
             //ob_flush();
             exit();
             //redirect("Location: dashboard.php");
         }else{
             setFlashMessage("Update failed. Please try again.");
+            logEvent();
             redirect("dashboard.php");
         }
     }catch (Exception $e){
@@ -48,10 +50,12 @@ if (isset($_POST['delete'])) {
 
         if ($result) {
             setFlashMessage("Deletion successful");
+            logEvent();
             header('Location: dashboard.php');
             exit();
         } else {
             setFlashMessage("Deletion failed. Please try again.");
+            logEvent();
             header('Location: dashboard.php');
             exit();
         }

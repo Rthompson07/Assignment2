@@ -108,9 +108,24 @@ function logOffUser(): void
         exit;
     }
 // lib/functions.php
+}
 
+/**
+ * Logs flash message activities with timestamp on text file
+ * @return void
+ */
+function logEvent(): void{
+    $logFile = 'log.txt';
 
+    $flashMessage = getFlashMessage();
+    $logMessage = "[" . date('Y-m-d H:i:s') . "] {$flashMessage} \n";
 
+    // Open log file
+    $file = fopen($logFile, 'a');
 
+    // Append log message in the file
+    fwrite($file, $logMessage);
 
+    // Close file
+    fclose($file);
 }
