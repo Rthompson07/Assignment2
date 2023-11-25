@@ -31,6 +31,7 @@ $totalAmount = $price3 + ($price3 * $hstRate3);
 
         .product-box {
             width: 450px;
+            height: 370px;
             margin-left: 700px;
             padding: 20px;
             border: 1px solid #ccc;
