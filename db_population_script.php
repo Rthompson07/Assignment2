@@ -1,55 +1,37 @@
 <?php
 require_once 'vendor/autoload.php';
-require_once './lib/functions.php';
-require_once './lib/db_php.php';
-
-$connection = db_connect();
-//$connection = new PDO('postgres-php', 'admin', 'password', 'INFT2100-F2023', '5432');
-
-// Check the connection
-if ($connection->connect_error) {
-die("Connection failed: " . $connection->connect_error);
-}
+require_once 'lib/functions.php';
+require_once 'lib/db_php.php';
 
 // Initialize Faker
 $faker = Faker\Factory::create();
 
-// Generate mock data
-$name = $faker->name;
-$email = $faker->email;
-$password = $faker->password;
-$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+try {
+    $connection = db_connect();
 
-// Set parameter values
-$first_name = $faker->firstName;
-$last_name = $faker->lastName;
-$phone_extension = $faker->phoneNumber;
-$user_type = 'regular';  // You may adjust this based on your user types
+    for ($i=0; $i<1; $i++) {
+    // Set parameter values
+        $email_address = $faker->email;
+        $first_name = $faker->firstName;
+        $last_name = $faker->lastName;
+        $password = $faker->password;
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $phone_extension = $faker->randomNumber(5, true);
+        $user_type = $faker->randomElement(['s', 'a', 'c', 'p', 'd', 'v']);
 
-// Insert data into the database using prepared statements
-$sql = "INSERT INTO users (email_address, first_name, last_name, phone_extension, user_type) VALUES (?, ?, ?, ?, ?)";
-$stmt = $connection->prepare($sql);
+        try {
+            $result = registerUser($email_address, $first_name, $last_name, $hashedPassword, $phone_extension, $user_type);
 
-// Bind parameters
-$stmt->bind_param("sssss", $email, $first_name, $last_name, $phone_extension, $user_type);
+            // Check the result
+            if ($result) {
+                echo "Data inserted successfully!";
+            } else {
+                echo "Error: unable to insert data";
+            }
+        } catch (Exception $e) {
+        }
 
+    }
+} catch (Exception $e) {
 
-
-// Execute the statement
-$result = $stmt->execute();
-
-// Check the result
-if ($result) {
-echo "Data inserted successfully!";
-} else {
-echo "Error: " . $stmt->error;
 }
-
-// Close the statement and connection
-$stmt->close();
-$connection->close();
-
-// Adding a link to the database population script
-echo "<a href='db_population_script.php'>Populate Database</a>";
-
-
