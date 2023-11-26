@@ -10,3 +10,8 @@
 [2023-11-25 20:26:55] Logging out! 
 [2023-11-25 20:29:13] Diana has successfully signed in 
 [2023-11-25 20:29:24] Diana had successfully logged out! 
+[2023-11-26 01:43:58] Test had successfully logged out! 
+[2023-11-26 01:44:02] Bruce has successfully signed in 
+[2023-11-26 01:44:07] Deletion successful 
+[2023-11-26 01:44:12] Bruce had successfully logged out! 
+[2023-11-26 02:11:51] Bruce has successfully signed in 
