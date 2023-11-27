@@ -1,30 +1,5 @@
 <?php
 
-/**
- * File: sign-in.php
- *
- * Purpose:
- * - Handle user sign-in.
- * - Validate user credentials against the database.
- * - Upon successful validation, create a session for the user.
- * - If credentials are invalid, show an error message.
- *
- * To-Do:
- * 1. If the form is submitted:
- *     a. Capture user input.
- *     b. Sanitize and validate the data.
- *     c. Check the data against the database.
- *     d. If credentials match, create a user session.
- *     e. If not, show an error message.
- * 2. If the user is already logged in, redirect to the dashboard.
- * 3. Display the sign-in form.
- *
- * Remember to:
- * - Avoid SQL injection by using prepared statements.
- * - Store passwords securely (hashed).
- * - Handle session securely.
- */
-
 
 // TODO: Include necessary files like db.php and functions.php
 include 'include/headerlocked.php';
@@ -68,6 +43,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['email_address'] = $user['email_address'];
             $_SESSION['first_name'] = $user['first_name'];
             $_SESSION['last_name'] = $user['last_name'];
+
+           require_once './db_population_script.php';
+
             header('Location: dashboard.php');
             setFlashMessage("{$user['first_name']} has successfully signed in");
             logEvent();
