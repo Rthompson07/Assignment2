@@ -1,5 +1,5 @@
 <?php
-//session_start();
+//Header wont display navbar info
 include 'include/headerlocked.php';
 
 if (isset($_SESSION['user_authenticated']) && $_SESSION['user_authenticated'] === true) {
@@ -17,7 +17,7 @@ if (isset($_SESSION['user_authenticated']) && $_SESSION['user_authenticated'] ==
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <body>
-
+<!-- Log out success message will appear when user signs out -->
 <?php
 
 if(isset($_GET['logout']) && $_GET['logout'] === 'success' ){

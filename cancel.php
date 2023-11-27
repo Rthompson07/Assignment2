@@ -1,5 +1,6 @@
 <?php
-include 'include/header.php';
+/* include 'include/header.php'; */
+
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +15,7 @@ include 'include/header.php';
 <h1>Payment Cancelled</h1>
 <p>You have chosen to cancel your transaction</p>
 
-<form action="<?php echo NGROK_URL;?>/Assignment2/sandbox.php" method="get">
+<form action="<?php /* echo NGROK_URL; */ ?>/Assignment2/sandbox.php" method="get">
     <button type="submit" class="btn btn-primary">Return to Home Page</button>
 
 
@@ -27,5 +28,5 @@ include 'include/header.php';
 </html>
 
 <?php
-include 'include/footer.php';
+/* include 'include/footer.php'; */
 ?>
