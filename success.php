@@ -17,7 +17,7 @@ include 'include/header.php';
 <h1>Payment Successful</h1>
 <p>Your purchase was successful!</p>
 
-<form action="<?php echo NGROK_URL;?>/Assignment2/sandbox.php" method="get">
+<form action="<?php echo NGROK_URL;?>/Assignment3/sandbox.php" method="get">
     <button type="submit" class="btn btn-primary">Return to Home Page</button>
 
 
